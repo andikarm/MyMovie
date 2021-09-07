@@ -1,0 +1,379 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    outline: 0;
+    box-sizing: border-box;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    text-shadow: rgba(0, 0, 0, 0) 0 0 1px;
+    vertical-align: baseline;
+    background-clip: border-box;
+    word-break: break-word;
+}
+
+body {
+    background-color: #191B1F;
+    font-family: 'Poppins', sans-serif;
+}
+
+main {
+    display: block;
+    width: 100%;
+}
+
+input,
+select,
+button {
+    font-family: 'Poppins', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    transition: .3s;
+}
+
+html.prevent-scroll {
+    overflow: hidden;
+}
+
+.container {
+    width: calc(100% - 50px);
+    margin: 0 auto;
+}
+
+.site-header {
+    position: sticky;
+    top: 0;
+    padding: 16px 0;
+    z-index: 10;
+}
+
+.site-header {
+    background-color: #1b262c;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.site-header>.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu-navigation {
+    display: flex;
+    align-items: center;
+    flex-flow: row wrap;
+    list-style: none;
+}
+
+.menu-navigation .menu-item,
+.menu-navigation .menu-item a {
+    color: #fff;
+    font-weight: 500;
+}
+
+.menu-navigation .menu-item:hover a {
+    color: #1b6bf0;
+}
+
+.menu-navigation .menu-item a {
+    transition: .3s;
+}
+
+.menu-navigation .menu-item:not(:last-child) {
+    margin-right: 30px;
+}
+
+.hamburger-menu {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    align-content: space-between;
+}
+
+.hamburger-menu {
+    width: 45px;
+    padding: 5px;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.hamburger-menu span {
+    width: 100%;
+    height: 3px;
+    display: block;
+    background-color: #fff;
+    transform: rotate(0deg) translate(0px);
+    transition: all .3s;
+}
+
+.hamburger-menu span:nth-child(2) {
+    width: calc(100% - 10px);
+}
+
+.hamburger-menu span:last-child {
+    width: calc(100% - 4px);
+}
+
+.hamburger-menu span:not(:last-child) {
+    margin-bottom: 8px;
+}
+
+.toggle-onactive .hamburger-menu span:first-child {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.toggle-onactive .hamburger-menu span:nth-child(2) {
+    transform: translateX(50%);
+    opacity: 0;
+}
+
+.toggle-onactive .hamburger-menu span:last-child {
+    transform: rotate(-45deg) translate(8px, -8px);
+    width: 100%;
+}
+
+search-bar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-radius: 15px;
+    margin: 32px 0;
+}
+
+search-bar {
+    min-height: 300px;
+    height: calc(100vh / 2.5);
+    max-height: 360px;
+}
+
+search-bar {
+    background-image: linear-gradient(to right, rgba(3, 37, 65, 0.8) 0%, rgba(3, 37, 65, 0) 100%), url("https://www.themoviedb.org/t/p/w1920_and_h600_multi_faces_filter(duotone,032541,01b4e4)/iNh3BivHyg5sQRPP1KOkzguEX0H.jpg");
+    background-position: top center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.element-title {
+    display: block;
+    opacity: 1;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.element-title.hidden {
+    display: none;
+    opacity: 0;
+}
+
+movie-list,
+popular-movie-list,
+popular-tv-list,
+popular-artist-list {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+}
+
+movie-list>.placeholder,
+popular-movie-list>.placeholder,
+popular-tv-list>.placeholder,
+popular-artist-list>.placeholder {
+    font-weight: lighter;
+    color: #fff;
+    user-select: none;
+    margin-bottom: 18px;
+}
+
+movie-item,
+tv-item {
+    display: block;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.poster-item:hover img {
+    transform: scale(1.1);
+}
+
+.poster-item img {
+    transition: .3s;
+}
+
+.poster-item {
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.poster-item>span {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    min-width: 50px;
+    background: linear-gradient(109deg, rgba(37, 149, 251, 1) 0%, rgba(26, 101, 238, 1) 98%);
+    padding: 4px 8px;
+    font-size: 12px;
+    border-radius: 15px;
+    color: #fff;
+    text-align: center;
+}
+
+.poster-movie {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.movie-info {
+    padding: 15px 10px;
+}
+
+.movie-info>h2 {
+    font-size: 16px;
+    font-weight: lighter;
+    color: #fff;
+}
+
+.movie-info>p {
+    margin-top: 10px;
+    color: #61626B;
+}
+
+.foot_bar {
+    border-top: 1px solid #2e3a40;
+    padding: 1rem 0;
+    background: #1b262c;
+    text-align: center;
+    color: #fff;
+}
+
+.foot_bar a {
+    color: #1b6bf0;
+}
+
+.foot_bar a:hover {
+    color: #1cd3ac;
+}
+
+@media all and (min-width: 900px) {
+    .hamburger-menu {
+        display: none;
+    }
+}
+
+@media all and (min-width: 1200px) {
+
+    movie-item,
+    tv-item,
+    artist-item {
+        width: calc((100% / 5) - ((20px * 4) / 5));
+        margin-bottom: 18px;
+    }
+
+    movie-item:not(:nth-child(5n + 5)),
+    tv-item:not(:nth-child(5n + 5)),
+    artist-item:not(:nth-child(5n + 5)) {
+        margin-right: 20px;
+    }
+}
+
+@media all and (min-width: 1600px) {
+    .container {
+        width: 1080px;
+    }
+}
+
+@media all and (min-width: 901px) and (max-width: 1199px) {
+
+    movie-item,
+    tv-item,
+    artist-item {
+        width: calc((100% / 4) - ((20px * 3) / 4));
+        margin-bottom: 18px;
+    }
+
+    movie-item:not(:nth-child(4n + 4)),
+    tv-item:not(:nth-child(4n + 4)),
+    artist-item:not(:nth-child(4n + 4)) {
+        margin-right: 20px;
+    }
+}
+
+@media all and (min-width: 601px) and (max-width: 900px) {
+
+    movie-item,
+    tv-item,
+    artist-item {
+        width: calc((100% / 3) - ((20px * 2) / 3));
+        margin-bottom: 18px;
+    }
+
+    movie-item:not(:nth-child(3n + 3)),
+    tv-item:not(:nth-child(3n + 3)),
+    artist-item:not(:nth-child(3n + 3)) {
+        margin-right: 20px;
+    }
+}
+
+@media all and (max-width: 900px) {
+    .menu-bar {
+        position: absolute;
+        top: 100%;
+        left: -80%;
+        width: 80%;
+        height: calc(100vh - 100%);
+        background-color: #fff;
+        opacity: 0;
+        visibility: hidden;
+        transition: ease .3s;
+    }
+
+    .menu-bar {
+        padding: 20px 20px 30px;
+    }
+
+    .menu-navigation .menu-item {
+        width: 100%;
+    }
+
+    .menu-navigation .menu-item:not(:last-child) {
+        margin-bottom: 16px;
+    }
+
+    .site-header.toggle-onactive .menu-bar {
+        opacity: 1;
+        visibility: visible;
+        left: 0;
+        transition: left .3s;
+    }
+
+    .site-header.toggle-onactive .menu-bar {
+        background-color: rgba(27, 38, 44, .9);
+        backdrop-filter: blur(20px);
+    }
+}
+
+@media all and (max-width: 600px) {
+
+    movie-item,
+    tv-item,
+    artist-item {
+        width: calc(50% - 10px);
+        margin-bottom: 18px;
+    }
+
+    movie-item:not(:nth-child(2n + 2)),
+    tv-item:not(:nth-child(2n + 2)),
+    artist-item:not(:nth-child(2n + 2)) {
+        margin-right: 20px;
+    }
+}
